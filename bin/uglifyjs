@@ -178,6 +178,9 @@ function process_option(name, no_value) {
         if (typeof options.mangle != "object") options.mangle = {};
         options.mangle.properties = parse_js(read_value(), options.mangle.properties);
         break;
+      case "prefix":
+          options.prefix = parse_js(read_value(), options.prefix);
+          break;
       case "name-cache":
         nameCache = read_value(true);
         options.nameCache = JSON.parse(read_file(nameCache, "{}"));
